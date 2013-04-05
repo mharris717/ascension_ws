@@ -7,6 +7,8 @@
 
   wsUrl = "http://localhost:5100";
 
+  wsUrl = "http://godfucker.herokuapp.com";
+
   getRootModel = function(obj) {
     while (obj && obj.get && obj.get("model")) {
       obj = obj.get("model");
