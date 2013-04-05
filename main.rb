@@ -18,7 +18,7 @@ end
 
 
 def db
-  $db ||= get_connection.db('ascension-web')
+  get_connection
 end
 
 #Choices.setup_chooser!
