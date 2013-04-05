@@ -1,0 +1,57 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    activesupport (3.2.13)
+      i18n (= 0.6.1)
+      multi_json (~> 1.0)
+    andand (1.3.3)
+    ascension (0.1.0)
+      activesupport
+      andand
+      bson_ext
+      mharris_ext
+      mongo
+      mongo_persist
+      mongo_scope
+      rchoice
+      sinatra
+    bson (1.8.4)
+    bson_ext (1.8.4)
+      bson (~> 1.8.4)
+    facets (2.9.3)
+    fattr (2.2.1)
+    i18n (0.6.1)
+    mharris_ext (1.6.0)
+      facets
+      fattr
+    mongo (1.8.4)
+      bson (~> 1.8.4)
+    mongo_persist (0.2.0)
+      activesupport
+      andand
+      bson_ext
+      mharris_ext
+      mongo
+      mongo_scope
+    mongo_scope (0.0.5)
+      mongo
+    multi_json (1.7.2)
+    rack (1.5.2)
+    rack-protection (1.5.0)
+      rack
+    rchoice (0.2.0)
+      andand
+      mharris_ext
+    sinatra (1.3.6)
+      rack (~> 1.4)
+      rack-protection (~> 1.3)
+      tilt (~> 1.3, >= 1.3.3)
+    tilt (1.3.6)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  ascension (= 0.1.0)
+  mongo_persist (= 0.2.0)
+  sinatra
