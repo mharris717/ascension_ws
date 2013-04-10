@@ -3,10 +3,6 @@
 
   window.App = Em.Application.create();
 
-  wsUrl = "http://4uec.localtunnel.com";
-
-  wsUrl = "http://localhost:5100";
-
   wsUrl = "http://godfucker.herokuapp.com";
 
   getRootModel = function(obj) {
@@ -196,7 +192,19 @@
     },
     isGameController: (function() {
       return true;
-    }).property()
+    }).property(),
+    addCard: function() {
+      var card, game, id, sideNum,
+        _this = this;
+      game = this.get("model");
+      id = game.get("id");
+      card = this.get("cardToAdd");
+      sideNum = 1;
+      return $.getJSON("" + wsUrl + "/games/" + id + "/" + sideNum + "/add_card/" + card).then(function(resp) {
+        getRootModel(game).setFromRaw(resp);
+        return _this.set("cardToAdd", "");
+      });
+    }
   });
 
   App.SideController = Em.ObjectController.extend({
@@ -250,9 +258,22 @@
     }).property("engageable_cards", "pool.runes", "pool.power"),
     chooseOption: function(choice, card) {
       var game, id;
+      if (!card) {
+        card = {
+          card_id: "null"
+        };
+      }
       game = this.get("game");
       id = game.get("id");
       return $.getJSON("" + wsUrl + "/games/" + id + "/choose_option/" + choice.choice_id + "/" + card.card_id).then(function(resp) {
+        return getRootModel(game).setFromRaw(resp);
+      });
+    },
+    invokeAbility: function(card) {
+      var game, id;
+      game = this.get("game");
+      id = game.get("id");
+      return $.getJSON("" + wsUrl + "/games/" + id + "/invoke_ability/" + card.card_id).then(function(resp) {
         return getRootModel(game).setFromRaw(resp);
       });
     }

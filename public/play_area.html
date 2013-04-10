@@ -14,72 +14,8 @@
     <script src="/javascripts/all.js" type="text/javascript"></script>
   </head>
   
-  <body class="index">
-    <script type="text/x-handlebars" data-template-name="application">
-  <h1>Ascension</h1>
-  {{outlet}}
-</script>
-
-<script type="text/x-handlebars" data-template-name="games">
-  <a href="#" {{action "resetGame"}}>Reset</a><br>
-  {{#if showGames}}
-  {{#each game in this}}
-    {{#linkTo "game" game }}Game {{game.id}}{{/linkTo}}
-    <br>
-  {{/each}}
-  {{/if}}
-  <br>
-  {{outlet}}
-</script>
-
-<script type="text/x-handlebars" data-template-name="game">
-  Current Side Index: {{current_side_index}}<br>
-  Honor: {{honor}}<br>
-  
-  {{view Em.TextField valueBinding="cardToAdd"}}
-  <a href="#" {{action addCard}}>Add Card</a><br>
-  
-  
-  <br>
-
-  {{partial "center"}}
-
-  <br><br>
-  
-  {{outlet}}
-</script>
-
-<script type="text/x-handlebars" data-template-name="_center">
-  Center: <br>
-
-  <div class="row">
-    {{#each card in constantCards}}
-      <div class="span2">
-        {{#if card.engageable}}
-          <a href="#" {{action "acquireCard" card}}>{{card.name}}</a>
-        {{else}}
-          {{card.name}}
-        {{/if}}
-      </div>
-    {{/each}}
-    <div class="span6"></div>
-  </div>
-
-  <div class="row">
-    {{#each card in centerCards}}
-      <div class="span2">
-        {{#if card.engageable}}
-          <a href="#" {{action "acquireCard" card}}>{{card.name}}</a>
-        {{else}}
-          {{card.name}}
-        {{/if}}
-      </div>
-    {{/each}}
-  </div>
-</script>
-
-
-<script type="text/x-handlebars" data-template-name="_my_side">
+  <body class="play_area">
+    <script type="text/x-handlebars" data-template-name="_my_side">
   <div class="row">
     {{partial "actions"}}
     {{partial "pool"}}
@@ -184,7 +120,5 @@
 </script>
 
 
-Stuff!
-<br>
   </body>
 </html>
