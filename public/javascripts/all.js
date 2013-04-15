@@ -33476,7 +33476,7 @@ function getGameJson() {
 
   window.App = Em.Application.create();
 
-  wsUrl = "http://localhost:5100";
+  wsUrl = "http://godfucker.herokuapp.com";
 
   getRootModel = function(obj) {
     while (obj && obj.get && obj.get("model")) {
