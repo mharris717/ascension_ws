@@ -21,6 +21,7 @@ end
 
 def db
   get_connection
+  #@db ||= Mongo::Connection.new.db("ascension-web")
 end
 
 #Choices.setup_chooser!
@@ -30,7 +31,7 @@ helpers do
     {:_id => BSON::ObjectId(params[:id])}
   end
   def set_origin
-    response['Access-Control-Allow-Origin'] = 'http://localhost:4568'
+    response['Access-Control-Allow-Origin'] = 'http://localhost:5200'
   end
   def game
     set_origin
@@ -111,6 +112,7 @@ get "/games/:id/choose_option/:choice_id/:card" do
   end
 
   choice.execute! card
+  game.turn_manager.resume!
   game.mongo.save!
   game.to_json
 end

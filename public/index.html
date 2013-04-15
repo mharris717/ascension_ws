@@ -95,12 +95,25 @@
   {{render other_side otherSide}}
 </script>
 
+<script type="text/x-handlebars" data-template-name="_history">
+  <div class="span6">
+    <h3>History</h3>
+    {{#each card in last_turn.played_cards}}
+      {{card.name}}<br>
+    {{/each}}
+    ------<br>
+    {{#each card in last_turn.engaged_cards}}
+      {{card.name}}<br>
+    {{/each}}
+  </div>
+</script>
+
 <script type="text/x-handlebars" data-template-name="other_side">
   <div class="row">
     {{partial "pool"}}
     {{partial "played"}}
     {{partial "discard"}}
-    <div class="span6"></div>
+    {{partial "history"}}
   </div>
 </script>
 
@@ -131,7 +144,7 @@
     Runes: {{played.pool.runes}}<br>
     Power: {{played.pool.power}}<br>
     Honor: {{honor}}<br>
-    Deck Size: {{deck.cards.length}}
+    D/H Size: {{deck.cards.length}}/{{hand.cards.length}}
     <h3>Constructs</h3>
     {{#each card in constructs.cards}}
       {{#if card.has_invokable_ability}}

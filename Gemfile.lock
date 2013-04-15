@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/mharris717/ascension.git
-  revision: 5140c2d1324878a294dc3ad467e72ec8cf8104a4
+  revision: 47f073a5806474938393e3999d58a8a9b128f113
   specs:
     ascension (0.1.0)
       activesupport
