@@ -97,11 +97,12 @@
 
 <script type="text/x-handlebars" data-template-name="_history">
   <div class="span6">
-    <h3>History</h3>
+    <h3>Last Turn</h3>
+    <h4>Played</h4>
     {{#each card in last_turn.played_cards}}
       {{card.name}}<br>
     {{/each}}
-    ------<br>
+    <h4>Engaged</h4>
     {{#each card in last_turn.engaged_cards}}
       {{card.name}}<br>
     {{/each}}
