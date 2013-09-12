@@ -1,6 +1,7 @@
 GIT
-  remote: git://github.com/mharris717/ascension.git
-  revision: 47f073a5806474938393e3999d58a8a9b128f113
+  remote: https://github.com/mharris717/ascension_ws.git
+  revision: 5e5061443840ff1f2003599b23cc2f70a44de730
+  branch: master
   specs:
     ascension (0.1.0)
       activesupport
@@ -26,6 +27,7 @@ GEM
     facets (2.9.3)
     fattr (2.2.1)
     i18n (0.6.1)
+    kgio (2.8.1)
     mharris_ext (1.7.0)
       facets
       fattr
@@ -41,18 +43,29 @@ GEM
     mongo_scope (0.0.5)
       mongo
     multi_json (1.7.2)
+    pusher (0.11.3)
+      multi_json (~> 1.0)
+      signature (~> 0.1.6)
     rack (1.5.2)
     rack-protection (1.5.0)
       rack
+    raindrops (0.12.0)
     rake (10.0.4)
-    rchoice (0.2.0)
+    rchoice (0.3.0)
       andand
       mharris_ext
+      redis
+    redis (3.0.4)
+    signature (0.1.6)
     sinatra (1.4.2)
       rack (~> 1.5, >= 1.5.2)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
     tilt (1.3.7)
+    unicorn (4.6.3)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
 
 PLATFORMS
   ruby
@@ -60,5 +73,7 @@ PLATFORMS
 DEPENDENCIES
   ascension!
   mongo_persist (= 0.2.0)
+  pusher
   rake
   sinatra
+  unicorn

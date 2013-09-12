@@ -5,7 +5,7 @@ if false
   gem 'ascension', '0.1.0'
 else
   #gem "ascension", :path => "/code/orig/ascension"
-  gem "ascension", :github => "mharris717/ascension"
+  gem "ascension", :git => "https://github.com/mharris717/ascension_ws.git", :branch => :master
 end
 
 gem 'sinatra'
