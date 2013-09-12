@@ -1,5 +1,5 @@
 GIT
-  remote: https://github.com/mharris717/ascension_ws.git
+  remote: https://github.com/mharris717/ascension.git
   revision: 5e5061443840ff1f2003599b23cc2f70a44de730
   branch: master
   specs:
@@ -7,10 +7,12 @@ GIT
       activesupport
       andand
       bson_ext
+      google-search
       mharris_ext
       mongo
       mongo_persist
       mongo_scope
+      nokogiri
       rchoice
       sinatra
 
@@ -26,11 +28,15 @@ GEM
       bson (~> 1.8.5)
     facets (2.9.3)
     fattr (2.2.1)
+    google-search (1.0.3)
+      json
     i18n (0.6.1)
+    json (1.8.0)
     kgio (2.8.1)
     mharris_ext (1.7.0)
       facets
       fattr
+    mini_portile (0.5.1)
     mongo (1.8.5)
       bson (~> 1.8.5)
     mongo_persist (0.2.0)
@@ -43,6 +49,8 @@ GEM
     mongo_scope (0.0.5)
       mongo
     multi_json (1.7.2)
+    nokogiri (1.6.0)
+      mini_portile (~> 0.5.0)
     pusher (0.11.3)
       multi_json (~> 1.0)
       signature (~> 0.1.6)
