@@ -10,3 +10,5 @@ end
 
 gem 'sinatra'
 gem 'rake'
+gem 'pusher'
+gem 'unicorn'
