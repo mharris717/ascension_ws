@@ -26,7 +26,7 @@ def get_connection
   @db_connection
 end
 
-Ascension.db = Mongo::Connection.new.db("ascension-web")
+Ascension.db = get_connection
 
 #Choices.setup_chooser!
 
